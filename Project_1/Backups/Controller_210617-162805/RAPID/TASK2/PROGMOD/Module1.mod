@@ -1,0 +1,5 @@
+MODULE Module1
+    PROC main()
+        MoveAbsJ [[0,0,0,0,90,0],[9E9, 9E9, 9E9, 9E9, 9E9, 9E9]],v300,fine,tool0;
+    ENDPROC
+ENDMODULE
