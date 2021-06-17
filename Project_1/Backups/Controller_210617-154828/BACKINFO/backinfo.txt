@@ -1,0 +1,51 @@
+#
+# Generated backup file, do not edit.
+#
+# Originally at: C:\Users\tinka\Documents\Vut\VRM_2\VUT-VRM\Project_1\Virtual Controllers\TEMP\d96f7199-a8ae-4717-a8fd-80de4640cdf4\backup.510216
+# 2021-06-17  15:48:29
+#
+>>SYSTEM_ID:
+VIRTUAL_USE
+
+>>PRODUCTS_ID:
+RobotWare Version: 6.12.02.00
+
+  RobotWare Base
+  English
+  623-1 Multitasking
+  604-1 MultiMove Coordinated
+  Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID
+  ADU-790A in position X3
+  ADU-790A in position Y3
+  ADU-790A in position Z3
+  Axis Calibration
+  IRB 1200-5/0.9 Type B
+  Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID
+  ADU-790A in position X3
+  ADU-790A in position Y3
+  ADU-790A in position Z3
+  Axis Calibration
+  IRB 1200-5/0.9 Type B
+
+>>HOME:
+All public files and directories
+
+>>SYSPAR:
+SYS.cfg
+PROC.cfg
+MMC.cfg
+EIO.cfg
+SIO.cfg
+MOC.cfg
+
+
+>>TASK1: (T_ROB1,,)
+SYSMOD\user.sys @ 
+PROGMOD\Module1.mod @ 
+
+>>TASK2: (T_ROB2,,)
+SYSMOD\user.sys @ 
+PROGMOD\Module1.mod @ 
+
+
+>>EOF:
