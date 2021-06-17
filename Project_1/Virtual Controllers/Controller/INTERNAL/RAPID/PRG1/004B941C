@@ -34,8 +34,10 @@ MODULE Module1
     CONST robtarget Target_180:=[[190.007422004,-486.879520097,166],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     VAR num actual_state;
+    
+    ! Select which objects have to be move
     !1 - Blue, 2 - Red, 3 - Dark red
-    VAR num which_object := 3;
+    VAR num which_object := 1;
     
     PROC main()
         TEST actual_state
@@ -48,16 +50,19 @@ MODULE Module1
         CASE 2:
             IF which_object = 1 THEN
                 Path_Blue_Objects;
-            ELSEIF which_object = 1 THEN
-            ELSE
+            ELSEIF which_object = 2 THEN
                 Path_Red_Objects;
+            ELSE
+                Path_Dark_Red_Objects;
             ENDIF
             actual_state := 3;
         CASE 3:
             IF which_object = 1 THEN
                 attach_blue;
-            ELSE
+            ELSEIF which_object = 1 THEN
                 attach_red;
+            ELSE
+                attach_dark_red;
             ENDIF
             actual_state := 4;
         CASE 4:
