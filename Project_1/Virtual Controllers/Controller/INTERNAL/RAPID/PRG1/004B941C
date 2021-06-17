@@ -42,12 +42,15 @@ MODULE Module1
     PROC main()
         TEST actual_state
         CASE 0:
+            ! Set objects to initial position
             initial_position;
             actual_state := 1;
         CASE 1:
+            ! Move the initial tab to conveyor
             Path_1;
             actual_state := 2;
         CASE 2:
+            ! Move two objects to initial tab, which is in conveyor
             IF which_object = 1 THEN
                 Path_Blue_Objects;
             ELSEIF which_object = 2 THEN
@@ -57,6 +60,7 @@ MODULE Module1
             ENDIF
             actual_state := 3;
         CASE 3:
+            ! Attach objects to initila tab
             IF which_object = 1 THEN
                 attach_blue;
             ELSEIF which_object = 1 THEN
@@ -66,6 +70,7 @@ MODULE Module1
             ENDIF
             actual_state := 4;
         CASE 4:
+            ! Start conveyor
             SetDO DO_MOVER, 1;
             actual_state :=100;
         CASE 100:
