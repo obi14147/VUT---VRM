@@ -35,7 +35,7 @@ MODULE Module1
     
     VAR num actual_state;
     !1 - Blue, 2 - Red, 3 - Dark red
-    VAR num which_object := 1;
+    VAR num which_object := 3;
     
     PROC main()
         TEST actual_state
@@ -73,8 +73,8 @@ MODULE Module1
         PulseDO DO_POS_B_2;
         PulseDO DO_POS_A_1;
         PulseDO DO_POS_A_2;
-        !PulseDO DO_POS_DR_1;
-        !PulseDO DO_POS_DR_2;
+        PulseDO DO_POS_DR_1;
+        PulseDO DO_POS_DR_2;
         PulseDO DO_POS_BOX;
     ENDPROC
     PROC Path_1()
@@ -97,28 +97,28 @@ MODULE Module1
     PROC Path_Blue_Objects()
         MoveL Target_40,v300,z100,smc_gripper\WObj:=Blue_Objects;
         MoveL Target_50_2,v300,z100,smc_gripper\WObj:=Blue_Objects;
-        MoveL Target_50,v300,fine,smc_gripper\WObj:=Blue_Objects;
+        MoveL Target_50,v150,fine,smc_gripper\WObj:=Blue_Objects;
         WaitTime 0.5;
         ! ATTACH
         PulseDO DO_ATT_B_1;
         WaitTime 0.5;
-        MoveL Target_50_2,v300,z100,smc_gripper\WObj:=Blue_Objects;
-        MoveL Target_60_2,v300,z100,smc_gripper\WObj:=Blue_Objects;
-        MoveL Target_60,v300,fine,smc_gripper\WObj:=Blue_Objects;
+        MoveL Target_50_2,v150,z100,smc_gripper\WObj:=Blue_Objects;
+        MoveL Target_60_2,v150,z100,smc_gripper\WObj:=Blue_Objects;
+        MoveL Target_60,v100,fine,smc_gripper\WObj:=Blue_Objects;
         WaitTime 0.5;
         ! DETACH
         PulseDO DO_DET_B_1;
         WaitTime 0.5;
         MoveL Target_60_2,v300,z100,smc_gripper\WObj:=Blue_Objects;
         MoveL Target_70_2,v300,z100,smc_gripper\WObj:=Blue_Objects;
-        MoveL Target_70,v300,fine,smc_gripper\WObj:=Blue_Objects;
+        MoveL Target_70,v150,fine,smc_gripper\WObj:=Blue_Objects;
         WaitTime 0.5;
         ! ATTACH
         PulseDO DO_ATT_B_2;
         WaitTime 0.5;
         MoveL Target_70_2,v150,z100,smc_gripper\WObj:=Blue_Objects;
         MoveL Target_80_2,v150,z100,smc_gripper\WObj:=Blue_Objects;
-        MoveL Target_80,v150,fine,smc_gripper\WObj:=Blue_Objects;
+        MoveL Target_80,v100,fine,smc_gripper\WObj:=Blue_Objects;
         WaitTime 0.5;
         ! DETACH
         PulseDO DO_DET_B_2;
@@ -128,28 +128,28 @@ MODULE Module1
     PROC Path_Red_Objects()
         MoveL Target_90,v300,z100,smc_gripper\WObj:=Red_Objects;
         MoveL Target_100_2,v300,z100,smc_gripper\WObj:=Red_Objects;
-        MoveL Target_100,v300,fine,smc_gripper\WObj:=Red_Objects;
+        MoveL Target_100,v150,fine,smc_gripper\WObj:=Red_Objects;
         WaitTime 0.5;
         ! ATTACH
         PulseDO DO_ATT_R_1;
         WaitTime 0.5;
-        MoveL Target_100_2,v300,z100,smc_gripper\WObj:=Red_Objects;
-        MoveL Target_110_2,v300,z100,smc_gripper\WObj:=Red_Objects;
-        MoveL Target_110,v300,fine,smc_gripper\WObj:=Red_Objects;
+        MoveL Target_100_2,v150,z100,smc_gripper\WObj:=Red_Objects;
+        MoveL Target_110_2,v150,z100,smc_gripper\WObj:=Red_Objects;
+        MoveL Target_110,v100,fine,smc_gripper\WObj:=Red_Objects;
         WaitTime 0.5;
         ! DETACH
         PulseDO DO_DET_R_1;
         WaitTime 0.5;
         MoveL Target_110_2,v300,z100,smc_gripper\WObj:=Red_Objects;
         MoveL Target_120_2,v300,z100,smc_gripper\WObj:=Red_Objects;
-        MoveL Target_120,v300,fine,smc_gripper\WObj:=Red_Objects;
+        MoveL Target_120,v150,fine,smc_gripper\WObj:=Red_Objects;
         WaitTime 0.5;
         ! ATTACH
         PulseDO DO_ATT_R_2;
         WaitTime 0.5;
         MoveL Target_120_2,v150,z100,smc_gripper\WObj:=Red_Objects;
         MoveL Target_130_2,v150,z100,smc_gripper\WObj:=Red_Objects;
-        MoveL Target_130,v150,fine,smc_gripper\WObj:=Red_Objects;
+        MoveL Target_130,v100,fine,smc_gripper\WObj:=Red_Objects;
         WaitTime 0.5;
         ! DETACH
         PulseDO DO_DET_R_2;
@@ -159,31 +159,31 @@ MODULE Module1
     PROC Path_Dark_Red_Objects()
         MoveL Target_140,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
         MoveL Target_150_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
-        MoveL Target_150,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_150,v150,fine,smc_gripper\WObj:=Dark_Red_Objects;
         WaitTime 0.5;
         ! ATTACH
-        !PulseDO DO_ATT_DR_1;
+        PulseDO DO_ATT_DR_1;
         WaitTime 0.5;
-        MoveL Target_150_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
-        MoveL Target_160_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
-        MoveL Target_160,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_150_2,v150,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_160_2,v150,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_160,v100,fine,smc_gripper\WObj:=Dark_Red_Objects;
         WaitTime 0.5;
         ! DETACH
-        !PulseDO DO_DET_DR_1;
+        PulseDO DO_DET_DR_1;
         WaitTime 0.5;
         MoveL Target_160_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
         MoveL Target_170_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
-        MoveL Target_170,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_170,v150,fine,smc_gripper\WObj:=Dark_Red_Objects;
         WaitTime 0.5;
         ! ATTACH
-        !PulseDO DO_ATT_DR_2;
+        PulseDO DO_ATT_DR_2;
         WaitTime 0.5;
-        MoveL Target_170_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
-        MoveL Target_180_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
-        MoveL Target_180,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_170_2,v150,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_180_2,v150,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_180,v100,fine,smc_gripper\WObj:=Dark_Red_Objects;
         WaitTime 0.5;
         ! DETACH
-        !PulseDO DO_DET_DR_2;
+        PulseDO DO_DET_DR_2;
         WaitTime 0.5;
         MoveL Target_140,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
     ENDPROC
@@ -196,7 +196,7 @@ MODULE Module1
         PulseDO DO_ATT_R_2_TO_O;
     ENDPROC
     PROC attach_dark_red()
-        !PulseDO DO_ATT_DR_1_TO_O;
-        !PulseDO DO_ATT_DR_2_TO_O;
+        PulseDO DO_ATT_DR_1_TO_O;
+        PulseDO DO_ATT_DR_2_TO_O;
     ENDPROC
 ENDMODULE
