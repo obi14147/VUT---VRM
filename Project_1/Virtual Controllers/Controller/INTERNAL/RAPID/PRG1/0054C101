@@ -22,11 +22,20 @@ MODULE Module1
     CONST robtarget Target_120_2:=[[494.007422004,410.120479903,241.125441554],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Target_120:=[[406.507422004,410.120479903,27.00000455],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget Target_130_2:=[[190.007422004,-486.879520097,321.160892308],[-0.000000026,0,1,0],[-1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
-    CONST robtarget Target_130:=[[190.007422004,-486.879520097,166],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_130:=[[190.007422004,-486.879520097,166],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]]; 
+    CONST robtarget Target_140:=[[451.000000008,0.004,610.098996275],[-0.000000026,0,1,0],[-1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_150_2:=[[581.507422004,110.120479903,308.106695553],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_150:=[[581.507422004,110.120479903,27],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_160_2:=[[364.007422004,-486.879520097,263.437491566],[-0.000000026,0,1,0],[-1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_160:=[[364.007422004,-486.879520097,166],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_170_2:=[[581.507422004,410.120479903,297.169545642],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_170:=[[581.507422004,410.120479903,27],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_180_2:=[[190.007422004,-486.879520097,285.550882013],[-0.000000026,0,1,0],[-1,-1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_180:=[[190.007422004,-486.879520097,166],[-0.000000026,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     
     VAR num actual_state;
-    !1 - Blue, 2 - Red
-    VAR num which_object := 2;
+    !1 - Blue, 2 - Red, 3 - Dark red
+    VAR num which_object := 1;
     
     PROC main()
         TEST actual_state
@@ -39,6 +48,7 @@ MODULE Module1
         CASE 2:
             IF which_object = 1 THEN
                 Path_Blue_Objects;
+            ELSEIF which_object = 1 THEN
             ELSE
                 Path_Red_Objects;
             ENDIF
@@ -63,6 +73,8 @@ MODULE Module1
         PulseDO DO_POS_B_2;
         PulseDO DO_POS_A_1;
         PulseDO DO_POS_A_2;
+        !PulseDO DO_POS_DR_1;
+        !PulseDO DO_POS_DR_2;
         PulseDO DO_POS_BOX;
     ENDPROC
     PROC Path_1()
@@ -151,6 +163,25 @@ MODULE Module1
     PROC attach_red()
         PulseDO DO_ATT_R_1_TO_O;
         PulseDO DO_ATT_R_2_TO_O;
+    ENDPROC
+    PROC attach_dark_red()
+        !PulseDO DO_ATT_DR_1_TO_O;
+        !PulseDO DO_ATT_DR_2_TO_O;
+    ENDPROC
+    PROC Path_Dark_Red_Objects()
+        MoveL Target_140,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_150_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_150,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_150_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_160_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_160,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_160_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_170_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_170,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_170_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_180_2,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_180,v300,fine,smc_gripper\WObj:=Dark_Red_Objects;
+        MoveL Target_140,v300,z100,smc_gripper\WObj:=Dark_Red_Objects;
     ENDPROC
     
 ENDMODULE
